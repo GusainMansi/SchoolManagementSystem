@@ -73,6 +73,11 @@ public class allStudentsResult extends javax.swing.JFrame {
 
         jButton4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton4.setText("Logout");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton5.setForeground(new java.awt.Color(255, 0, 0));
@@ -152,7 +157,7 @@ public class allStudentsResult extends javax.swing.JFrame {
           Class.forName("com.mysql.jdbc.Driver");
           Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/srm","root","22599");
           Statement st=con.createStatement();
-          ResultSet rs=st.executeQuery("select from result");
+          ResultSet rs=st.executeQuery("select *from result");
           jTable1.setModel(DbUtils.resultSetToTableModel(rs));
           
         }
@@ -179,6 +184,12 @@ public class allStudentsResult extends javax.swing.JFrame {
         setVisible(false);
         new adminHome().setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+         setVisible(false);
+        new adminHome().setVisible(true);
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
